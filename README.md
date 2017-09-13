@@ -1,2 +1,4 @@
 # NestedWebView
-NestedWebView is extended WebView. it implements NestedScrollingChild for work with CoordinatorLayout.
+NestedWebView is extended WebView. 
+
+it implements NestedScrollingChild for work with CoordinatorLayout.
