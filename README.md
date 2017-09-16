@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/marshi/maven/nestedwebview/images/download.svg) ](https://bintray.com/marshi/maven/nestedwebview/_latestVersion)
+
 # NestedWebView
 This library is composed of NestedWebView and NestedWebViewAppBarLayout.
 
