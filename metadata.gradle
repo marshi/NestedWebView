@@ -1,7 +1,7 @@
 ext {
     metadata = [
             artifactId  : 'nestedwebview',
-            groupId     : 'com.gitbub.marshi.android',
+            groupId     : 'com.github.marshi.android',
             website     : 'https://github.com/marshi/NestedWebView',
             repository  : 'https://github.com/marshi/NestedWebView.git',
             licences    : 'MIT',
