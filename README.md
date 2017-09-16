@@ -1,5 +1,5 @@
 # NestedWebView
-this library is composed of NestedWebView and NestedWebViewAppBarLayout.
+This library is composed of NestedWebView and NestedWebViewAppBarLayout.
 
 NestedWebView is extended WebView. 
 
