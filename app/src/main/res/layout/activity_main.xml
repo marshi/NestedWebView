@@ -20,10 +20,11 @@
             >
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/image"
                 android:minHeight="100dp"
+                android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
                 />
 

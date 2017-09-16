@@ -1,1 +1,1 @@
-include ':app', ':nested_webview'
+include ':app', ':library'
