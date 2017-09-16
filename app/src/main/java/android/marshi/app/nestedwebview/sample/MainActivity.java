@@ -14,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WebView webview = findViewById(R.id.webview);
         webview.loadUrl("https://m.yahoo.co.jp");
+        webview.getSettings().setJavaScriptEnabled(true);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 }
