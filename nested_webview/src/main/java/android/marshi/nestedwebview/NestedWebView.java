@@ -11,7 +11,8 @@ import android.view.ViewConfiguration;
 import android.webkit.WebView;
 
 /**
- *
+ * CoordinatorLayoutでAppBarLayoutと連動するWebView.
+ * 連動させるには{@link NestedWevViewAppBarLayout}と一緒に使用する必要がある.
  */
 public class NestedWebView extends WebView implements NestedScrollingChild {
 
@@ -24,7 +25,7 @@ public class NestedWebView extends WebView implements NestedScrollingChild {
     private int[] scrollConsumed = new int[2];
     private int[] scrollOffset = new int[2];
 
-    private boolean isCollapsed;
+    private boolean isToolbarClosed;
 
     private int scrollingMode = SCROLLING_NOTHING_MODE;
 
@@ -101,7 +102,7 @@ public class NestedWebView extends WebView implements NestedScrollingChild {
                 break;
         }
         if (actionMasked == MotionEvent.ACTION_MOVE) {
-            if (this.isCollapsed) {
+            if (this.isToolbarClosed) {
                 return super.onTouchEvent(ev);
             } else {
                 return true;
@@ -110,20 +111,27 @@ public class NestedWebView extends WebView implements NestedScrollingChild {
         return super.onTouchEvent(ev);
     }
 
-    private void init() {
+    protected void init() {
         ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
         this.touchSlop = viewConfiguration.getScaledTouchSlop();
         this.childHelper = new NestedScrollingChildHelper(this);
         setNestedScrollingEnabled(true);
     }
 
-    void onChangeCollapseToolbar(boolean b, int dy) {
-        this.isCollapsed = b;
-        boolean W = getScrollY() == 0;
-        boolean S = 0 < dy;
-        if (W && !(b && S)) {
+    /**
+     * dispatchNestedScrollに渡す値の制御用.
+     * dispatchNestedScrollの第三引数によってAppBarLayoutの移動量が決まる(?)ので
+     * WebViewかAppBarLayoutかを移動させたいタイミングを計算.
+     * @param isToolbarClosed
+     * @param dy
+     */
+    void onChangeCollapseToolbar(boolean isToolbarClosed, int dy) {
+        this.isToolbarClosed = isToolbarClosed;
+        boolean isWebviewScrollTop = getScrollY() == 0;
+        boolean scrollingUp = 0 < dy;
+        if (isWebviewScrollTop && !(isToolbarClosed && scrollingUp)) {
             scrollingMode = SCROLLING_APPBAR_MODE;
-        } else if (b && (S && W || !S && !W)) {
+        } else if (isToolbarClosed && (scrollingUp && isWebviewScrollTop || !scrollingUp && !isWebviewScrollTop)) {
             scrollingMode = SCROLLING_WEBVIEW_MODE;
         } else {
             scrollingMode = SCROLLING_NOTHING_MODE;

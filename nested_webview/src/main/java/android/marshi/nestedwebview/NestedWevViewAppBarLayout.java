@@ -52,7 +52,7 @@ public class NestedWevViewAppBarLayout extends AppBarLayout {
             super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type);
         }
 
-        private Toolbar findToolbar(ViewGroup viewGroup) {
+        protected Toolbar findToolbar(ViewGroup viewGroup) {
             for (int i = 0; i < viewGroup.getChildCount(); i++) {
                 View view = viewGroup.getChildAt(i);
                 if (view instanceof Toolbar) {
