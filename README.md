@@ -13,5 +13,20 @@ It implements NestedScrollingChild in order to work with CoordinatorLayout.
 # sample
 https://github.com/marshi/NestedWebView/tree/master/app
 
+# Get Started
+```
+allprojects {
+    repositories {
+        maven {
+            url  "http://dl.bintray.com/marshi/maven"
+        }
+    }
+}
+```
+
+```
+compile 'com.github.marshi.android:nestedwebview:1.0.0'
+```
+
 ## License
 MIT
