@@ -27,6 +27,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile project(':library')
+//    compile project(':library')
+    compile 'com.github.marshi.android:nestedwebview:1.0.0'
     testCompile 'junit:junit:4.12'
 }
