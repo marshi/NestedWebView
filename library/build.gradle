@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 26
@@ -26,9 +27,20 @@ dependencies {
     compile 'com.android.support:design:26.0.2'
 }
 
+// 成果物をどこにいれるか / pomの設定
+uploadArchives {
+    def metadata = rootProject.ext.metadata
+    repositories.mavenDeployer {
+        repository url: "file://$projectDir/build/poms"
+        pom.version = metadata.version
+        pom.groupId = metadata.groupId
+        pom.artifactId = metadata.artifactId
+    }
+}
+
 publish {
     def metadata = rootProject.ext.metadata
-    artifactId = 'nestedwebview'
+    artifactId = metadata.artifactid
     desc = 'A WebView which work with Coordinator Layout'
     groupId = metadata.groupId
     publishVersion = metadata.version
