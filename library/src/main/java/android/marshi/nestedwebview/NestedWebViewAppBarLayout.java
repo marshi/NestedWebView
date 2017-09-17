@@ -11,14 +11,14 @@ import android.view.ViewGroup;
 /**
  *
  */
-@CoordinatorLayout.DefaultBehavior(NestedWevViewAppBarLayout.Behavior.class)
-public class NestedWevViewAppBarLayout extends AppBarLayout {
+@CoordinatorLayout.DefaultBehavior(NestedWebViewAppBarLayout.Behavior.class)
+public class NestedWebViewAppBarLayout extends AppBarLayout {
 
-    public NestedWevViewAppBarLayout(Context context) {
+    public NestedWebViewAppBarLayout(Context context) {
         super(context);
     }
 
-    public NestedWevViewAppBarLayout(Context context, AttributeSet attrs) {
+    public NestedWebViewAppBarLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

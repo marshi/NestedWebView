@@ -12,7 +12,7 @@ import android.webkit.WebView;
 
 /**
  * CoordinatorLayoutでAppBarLayoutと連動するWebView.
- * 連動させるには{@link NestedWevViewAppBarLayout}と一緒に使用する必要がある.
+ * 連動させるには{@link NestedWebViewAppBarLayout}と一緒に使用する必要がある.
  */
 public class NestedWebView extends WebView implements NestedScrollingChild {
 
