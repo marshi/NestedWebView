@@ -25,7 +25,7 @@ allprojects {
 ```
 
 ```
-compile 'com.github.marshi.android:nestedwebview:1.0.0'
+compile 'com.github.marshi.android:nestedwebview:1.0.1'
 ```
 
 ## License
