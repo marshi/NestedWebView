@@ -1,14 +1,15 @@
 package android.marshi.nestedwebview;
 
 import android.content.Context;
-import android.support.annotation.Size;
-import android.support.v4.view.NestedScrollingChild;
-import android.support.v4.view.NestedScrollingChildHelper;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.webkit.WebView;
+
+import androidx.annotation.Size;
+import androidx.core.view.NestedScrollingChild;
+import androidx.core.view.NestedScrollingChildHelper;
+import androidx.core.view.ViewCompat;
 
 /**
  * CoordinatorLayoutでAppBarLayoutと連動するWebView.
