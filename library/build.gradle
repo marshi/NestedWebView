@@ -41,6 +41,7 @@ uploadArchives {
 
 publish {
     def metadata = rootProject.ext.metadata
+    userOrg = 'marshi'
     artifactId = metadata.artifactId
     desc = 'A WebView which work with Coordinator Layout'
     groupId = metadata.groupId
